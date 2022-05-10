@@ -1,0 +1,43 @@
+{
+  "name": "swish-pokedex",
+  "version": "1.0.0",
+  "type": "module",
+  "scripts": {
+    "start": "node /server/index.js",
+    "dev-server": "nodemon"
+  },
+  "nodemonConfig": {
+    "restartable": "rs",
+    "ignore": [
+      ".git",
+      "node_modules/",
+      "dist/",
+      "coverage/"
+    ],
+    "watch": [
+      "server/"
+    ],
+    "exec": "node server/index.js",
+    "env": {
+      "NODE_ENV": "development"
+    },
+    "ext": "js,json"
+  },
+  "dependencies": {
+    "bcrypt": "^5.0.1",
+    "cookie-parser": "^1.4.5",
+    "dotenv": "^10.0.0",
+    "express": "^4.17.1",
+    "jsonwebtoken": "^8.5.1",
+    "mongoose": "^6.0.12",
+    "multer": "^1.4.3",
+    "multer-gridfs-storage": "^5.0.2",
+    "node-fetch": "^3.2.4",
+    "socket.io": "^4.1.2"
+  },
+  "devDependencies": {
+    "concurrently": "^6.2.0",
+    "nodemon": "^2.0.7",
+    "socket.io-client": "^4.1.2"
+  }
+}

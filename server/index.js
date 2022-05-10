@@ -6,6 +6,7 @@ import path from 'path';
 import crypto from 'crypto';
 
 import fetch from "node-fetch";
+import { PokemonModel } from "./schemas/pokemon.schema.js";
 
 
 const PORT = 3000
@@ -32,13 +33,18 @@ app.get('/api/pokedex', (req, res) => {
         promises.push(fetch(url).then((res) => res.json()));
     }
     Promise.all(promises).then((results) => {
-        const pokemon = results.map((result) => ({
-            name: result.name,
-            image: result.sprites['front_default'],
-            type: result.types.map((type) => type.type.name).join(', '),
-            id: result.id
-        }));
-        res.json(pokemon);
+        const pokemons = results.map((result) => {
+            let pokemon = {
+                name: result.name,
+                image: result.sprites['front_default'],
+                type: result.types.map((type) => type.type.name).join(', '),
+                id: result.id
+            }
+            // UNCOMMENT NEXT LINE FOR SEED DATA 
+            // new PokemonModel(pokemon).save().catch(e => console.log(e))
+            return pokemon
+        })
+        res.json(pokemons)
     });
 })
 

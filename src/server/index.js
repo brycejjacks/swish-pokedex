@@ -27,25 +27,11 @@ app.use(cors());
 app.use(express.json())
 
 app.get('/api/pokedex', (req, res) => {
-    const promises = [];
-    for (let i = 1; i <= 150; i++) {
-        const url = `https://pokeapi.co/api/v2/pokemon/${i}`;
-        promises.push(fetch(url).then((res) => res.json()));
-    }
-    Promise.all(promises).then((results) => {
-        const pokemons = results.map((result) => {
-            let pokemon = {
-                name: result.name,
-                image: result.sprites['front_default'],
-                type: result.types.map((type) => type.type.name).join(', '),
-                id: result.id
-            }
-            // UNCOMMENT NEXT LINE FOR SEED DATA 
-            // new PokemonModel(pokemon).save().catch(e => console.log(e))
-            return pokemon
-        })
-        res.json(pokemons)
-    });
+    PokemonModel.find().lean()
+    .then(pokemons => res.json(pokemons))
+    .catch(e => {
+        res.sendStatus(500).json(e)
+    })
 })
 
 app.listen(PORT, function (){

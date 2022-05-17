@@ -37,7 +37,7 @@ app.get('/api/pokedex', (req, res) => {
             let pokemon = {
                 name: result.name,
                 image: result.sprites['front_default'],
-                type: result.types.map((type) => type.type.name).join(', '),
+                type: result.types.map((type) => type.type.name).join(', '), // if remove .join() then type = []
                 id: result.id
             }
             // UNCOMMENT NEXT LINE FOR SEED DATA 

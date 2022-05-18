@@ -6,8 +6,9 @@ fetch('http://localhost:3000/api/pokedex').then(res => res.json()).then((pokeLis
         map(
             (pokedude) => `
         <li class="card" onclick="updateInventory()">
+            <div class="card-number">${pokedude.id}</div>
             <img class="card-image" src="${pokedude.image}"/>
-            <h2 class="card-title">${pokedude.id}. ${pokedude.name}</h2>
+            <h2 class="card-title"> ${pokedude.name}</h2>
             <p class="card-subtitle">Type: ${pokedude.type}</p>
              <button class"addButton"> click </button>
              
@@ -36,18 +37,9 @@ function updateInventory(){
         <li class="card">
         <img class="card-image" src="${pokedude.image}"/>
         </li>
-        
         ` 
-        
-    })
-    
+    })   
 }
-
-
-
-
-
-
 
 // function updateInventory()  {
 //     renderedInventory();
@@ -58,11 +50,8 @@ function updateInventory(){
 // function grabPokemon(item) {
 //     console.log('hello');
     
-
-
 //     const addPokemon = pokeList.find(pokedude => pokedude.image === item);
-    
-    
+     
 //     const alreadyOwned = cartInv.find(pokedude => pokedude.image === item);
 
     
@@ -73,7 +62,6 @@ function updateInventory(){
 //                 cartInv.push(addPokemon);
 //             }
 //         updateInventory();
-
 //     }
     
     

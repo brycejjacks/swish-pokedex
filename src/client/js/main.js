@@ -5,7 +5,7 @@ fetch('http://localhost:3000/api/pokedex').then(res => res.json()).then((pokeLis
     const pokemonHTMLString = pokeList.
         map(
             (pokedude) => `
-        <li class="card" onclick="grabPokemon()">
+        <li class="card" onclick="updateInventory()">
             <img class="card-image" src="${pokedude.image}"/>
             <h2 class="card-title">${pokedude.id}. ${pokedude.name}</h2>
             <p class="card-subtitle">Type: ${pokedude.type}</p>
@@ -20,79 +20,69 @@ fetch('http://localhost:3000/api/pokedex').then(res => res.json()).then((pokeLis
 // Render pokemon to cart 
 
 
-
 // Array to catch pokemon
 const cartInv = [];
 
-// On click for button/card
+// Update Inventory
 
-function grabPokemon(item) {
-    console.log('hello');
-
-
+// inventory card variable
+let sideCards = document.getElementById('renderedInventory');
 
 
-    // const addPokemon = pokeList.find(pokedude => pokedude.image === item);
-
-
-    // const alreadyOwned = cartInv.find(pokedude => pokedude.image === item);
-
-
-    // if (alreadyOwned === alreadyOwned){
-    //     alert('You have this pokemon');
-    // }
-    // else {
-    //     cartInv.push(addPokemon);
-    // }
-    //     updateInventory();
-
-    }
-    
-
-
-
-
-
-
-
-
-
-
-    // Upate Inventory
-    // function updateInventory() {
-    //     renderedInventory();
-    // }
-    
-// function renderedInventory(){
-//     sideBar.innerHTML = '';
-//     cartInv.forEach(pokedude => {
-//         sideBar.innerHTML += `
-//         <li class="card">
-//             <img class="card-image" src="${pokedude.image}"/>
-//             <h2 class="card-title">${pokedude.id}. ${pokedude.name}</h2>
-//             <p class="card-subtitle">Type: ${pokedude.type}</p>
-//         </li>
+function updateInventory(){
+    sideCards.innerHTML = " ";
+    cartInv.forEach(pokedude => {
+        sideCards.innerHTML += `
+        <li class="card">
+        <img class="card-image" src="${pokedude.image}"/>
+        </li>
         
-//         ` 
+        ` 
+        
+    })
+    
+}
 
-//     })
 
+
+
+
+
+
+// function updateInventory()  {
+//     renderedInventory();
 // }
 
+// On click for button/card
+
+// function grabPokemon(item) {
+//     console.log('hello');
+    
 
 
-// const displayPokemon = (pokemon) => {
-//     console.log(pokemon);
-//     const pokemonHTMLString = pokemon
-//         .map(
-//             (pokedudes) => `
-//         <li class="card">
-//             <img class="card-image" src="${pokedudes.image}"/>
-//             <h2 class="card-title">${pokedudes.id}. ${pokedudes.name}</h2>
-//             <p class="card-subtitle">Type: ${pokedudes.type}</p>
-//         </li>
-//     `
-//         )
-//         .join('');
-//     pokedex.innerHTML = pokemonHTMLString;
-// };
+//     const addPokemon = pokeList.find(pokedude => pokedude.image === item);
+    
+    
+//     const alreadyOwned = cartInv.find(pokedude => pokedude.image === item);
+
+    
+//     if (alreadyOwned === alreadyOwned){
+//             alert('You have this pokemon');
+//         }
+//         else {
+//                 cartInv.push(addPokemon);
+//             }
+//         updateInventory();
+
+//     }
+    
+    
+    
+    
+    
+    
+    
+    
+
+
+

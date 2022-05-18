@@ -35,7 +35,7 @@
             let pokemon = {
                 id: result.id,
                 name: result.name,
-                image: result.sprites['front_default'],
+                image: result.sprites.other['official-artwork']['front_default'],
                 types: result.types.map((type) => type.type.name), // if remove .join() then type = []
                 abilities: result.abilities.map(ability => ability.ability.name),
                 flavor_text: flavor_text.replace(/\f|\n/g," "),

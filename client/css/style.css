@@ -1,9 +1,10 @@
-/* body {
+body {
     background-color: cornflowerblue;
     color: white;
     margin: 0;
     font-family: rubik;
 }
+
 
 .container {
     padding: 40px;
@@ -66,4 +67,32 @@ h1 {
     100% {
         transform: translateY(0);
     }
-} */
+}
+
+
+/* Feature 5 Css */
+
+.pokimg{
+    display: flex;
+    justify-content: end;
+}
+#inventorybutton{
+/* position: fixed; */
+/* right: 0%; */
+/* top: 0%; */
+height: 7vh;
+z-index: 200;
+}
+
+.cart-container{
+    width: 400px;
+    height: 100vh;
+    /* display: flex;
+    justify-content: flex-end; */
+    position: fixed;
+    z-index: 500;
+    right: 0%;
+    top: 0%;
+    background-color: rgba(153, 51, 51, 0.497);
+    
+}

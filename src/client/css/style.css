@@ -59,6 +59,9 @@ h1 {
     height: 180px;
 }
 .card-number {
+    position: relative;
+    top: 20vh;
+    left: 12vw;
     background-color: #ecda0f;
     color: white;
     width: fit-content;

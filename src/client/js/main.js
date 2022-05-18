@@ -6,10 +6,10 @@ fetch('http://localhost:3000/api/pokedex').then(res => res.json()).then((pokeLis
         map(
             (pokedude) => `
         <li class="card">
-             <div class="card-number">${pokedude.id}</div>
+            <div class="card-number">${pokedude.id}</div>
             <img class="card-image" src="${pokedude.image}"/>
             <h2 class="card-title"> ${pokedude.name}</h2>
-           
+            <p class="card-subtitle">Type: ${pokedude.type}</p>
         </li>
     `
         )

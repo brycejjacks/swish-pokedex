@@ -10,7 +10,9 @@ fetch('http://localhost:3000/api/pokedex').then(res => res.json()).then((pokeLis
             <img class="card-image" src="${pokedude.image}"/>
             <h2 class="card-title"> ${pokedude.name}</h2>
             <p class="card-subtitle">Type: ${pokedude.type}</p>
-             <button class"addButton"> click </button>
+             <button type="button" class="btn btn-primary" id="triggerButton" data-bs-toggle="modal" data-bs-target="#exampleModal">
+    Launch demo modal
+  </button>
              
         </li>
     `

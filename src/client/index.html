@@ -15,15 +15,15 @@
 </head>
 
 <body>
-  
-  <div class="pokimg">
+  <!-- pokeball img to open sidebar -->
+  <div class="pokimg" id="pokeimg">
     <img id="inventorybutton" src="/src/client/media/pokeball-png-45346 3.png" alt="">
   </div>
   
   <div class="cart-container cart-hide">
     <div class="cart-body">
-      <div class="close-icon">
-        <img src="" alt="">
+      <div class="xbutton" id="xbutton">
+        <img id="close-icon-inv" src="/src/client/media/Pokémon_Fire_Type_Icon 2.png" alt="">
       </div>
       <div id="renderedInventory"></div>
     </div>
@@ -49,25 +49,23 @@
     </div>
   </div>
   
-  <div class="container">
+  <div class="contain">
     <ul id="pokedex"></ul>
   </div>
 
  <!-- Modal -->
  <div class="modal fade" id="exampleModal" tabindex="-1" aria-labelledby="exampleModalLabel" aria-hidden="true">
-    
   <div class="modal-dialog">
     <div class="modal-content">
-      
-        
       <div class="modal-header">
+
         <!-- Top of Modal  -->
         <!-- Add to inventory -->
         <div class="modal-footer">
           <div class="footer1">
 
             <!-- <img id="plusInventory" src="/img/mac128 1.png" alt=""> -->
-            <h5 class="modal-title" id="PokeModalName">Charizard </h5>
+            <h5 class="modal-title" id="PokeModalName" onclick="getDetails(${pokedude.id})">Charizard </h5>
           </div>
         </div>
         
@@ -108,8 +106,6 @@
             <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, dicta?</p>
           </div>
           
-          
-          
           <!-- Stats of pokemon -->
           
           <div class="evoPokemon">
@@ -120,22 +116,13 @@
               <h4>Shield</h4>
               <h4>Speed</h4>
             </div>
-          </div>
-          
-          
-          
+          </div>      
         </div>
       </div>
   </div>
-  
-  
-  
 </div>
 
-
-
-
-
+  <!-- Footer -->
 
   <div class="footer-container">
     <img src="./media/pokémon-footer.png" class="img-fluid" alt="Pokémon footer" >

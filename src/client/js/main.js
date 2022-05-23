@@ -20,8 +20,19 @@ fetch('http://localhost:3000/api/pokedex').then(res => res.json()).then((pokeLis
         .join('');
     pokedex.innerHTML = pokemonHTMLString;
 })
-// Render pokemon to cart 
+// open cart on click pokemon to cart 
+document.getElementById('pokeimg').addEventListener('click', function() {
+    document.querySelector('.cart-hide').classList.remove('cart-hide');
+    // document.querySelector('.cart-hide').classList.add('slide');
+});
 
+// close side bar on click
+
+document.getElementById('xbutton').addEventListener('click', function() {
+    console.log('hello')
+    document.querySelector('.cart-container').classList.add('cart-hide');
+    // document.querySelector('.cart-hide').style.display = 'none';
+});
 
 // Array to catch pokemon
 const cartInv = [];
@@ -32,6 +43,24 @@ const cartInv = [];
 let sideCards = document.getElementById('renderedInventory');
 
 
+
+// onclick="getDetails(${pokedude.id})"
+
+function getDetails(id) {
+    fetch(`localhost:3000/api/pokemon/${id}`).then(res.json()).then(
+        (res) => {
+            `
+                <h1>${res.name}</h1>
+                <>
+            `
+        }
+    )
+    }
+
+
+
+
+    
 function updateInventory(){
     sideCards.innerHTML = " ";
     cartInv.forEach(pokedude => {
@@ -43,31 +72,7 @@ function updateInventory(){
     })   
 }
 
-// function updateInventory()  {
-//     renderedInventory();
-// }
 
-// On click for button/card
-
-// function grabPokemon(item) {
-//     console.log('hello');
-    
-//     const addPokemon = pokeList.find(pokedude => pokedude.image === item);
-     
-//     const alreadyOwned = cartInv.find(pokedude => pokedude.image === item);
-
-    
-//     if (alreadyOwned === alreadyOwned){
-//             alert('You have this pokemon');
-//         }
-//         else {
-//                 cartInv.push(addPokemon);
-//             }
-//         updateInventory();
-//     }
-    
-    
-    
     
     
     

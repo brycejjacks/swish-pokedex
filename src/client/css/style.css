@@ -103,8 +103,7 @@ h1 {
 .cart-container{
     width: 400px;
     height: 100vh;
-    /* display: flex;
-    justify-content: flex-end; */
+   overflow-y: scroll;
     position: fixed;
     z-index: 500;
     right: 0%;

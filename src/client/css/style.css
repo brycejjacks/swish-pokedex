@@ -97,89 +97,71 @@ h1 {
     display: flex;
     justify-content: end;
  }
+ .cart-hide{
+     display: none;
+ }
 #inventorybutton{
     height: 7vh;
     z-index: 200;
 }
-
 .cart-container{
     width: 400px;
     height: 100vh;
-    /* display: flex;
-    justify-content: flex-end; */
+   overflow-y: scroll;
     position: fixed;
     z-index: 500;
     right: 0%;
     top: 0%;
     background-color: rgba(153, 51, 51, 0.497);
 }    
+/* x close for inventory */
+.close-icon-inv{
+    height: 1em;
+}
+
 .footer-container img{
     width: 100%;
     height: 30vh;
 }
-
-
 /* modal css */
-
 .modal-header,.modal-body{
-    border: 15px solid rgba(0, 0, 0, 0.732);
-    
+    border: 15px solid rgba(0, 0, 0, 0.732);  
 }
-
 .modal{
     color: black;
-
 }
-
 .getZindex{
     padding-left: 3em;
 }
 .btn-close{
     margin-right: 5rem;
 }
-
-
 .footer1{
     display: flex;
     justify-content: center;
-
 }
-
 .modal-footer{
     display: flex;
     justify-content: space-between;
-    
 }
-
-
 .insideofcard{
     background-color: black;
 }
-
-
 #PokeModalName{
 font-size: 2.5rem;
 font-weight: bolder;
 }
 
-
-
 /* Picture on right  */
-
-
 .InventoryBody{
     display: flex;
 }
-
 .leftside{
     justify-content: end;
 }
-
 #rightpicture{
 height: 20rem;
-/* margin-left: 4rem; */
 }
-
 .indexPoke{
     background-color: yellow;
     height: 20px;
@@ -188,12 +170,8 @@ height: 20rem;
 
 /* left side of modal */
 
-/* .getZindex{
-    position: relative;
-} */
 .smallbox{
     position: relative;
-    /* float: right; */
     left: 70%;
     top: 80%;
     font-weight: bolder;
@@ -220,27 +198,43 @@ height: 20rem;
 }
 
 #elementBox{
-    /* display: flex; */
-    /* justify-content: space-around; */
     height: 4rem;
     margin-top: 2rem;
 }
 
-
 /* stats of pokemon*/
-
 #plusInventory{
     height: 4rem;
     display: flex;
     justify-content: center;
 }
-
 .modal-footer{
     margin-right: 40%;
     border-style: none;
 }
-
 .hpss{
     display: flex;
     justify-content: space-around;
+}
+
+/* keyframe for sidebar slide */
+
+.slide{
+    animation: slide 25s linear both;
+}
+
+@keyframes slide {
+    0% {
+        transform: translateX(1000px);
+        /* opacity: 0; */
+      }
+      100% {
+        transform: translateX(0);
+        opacity: 1;
+      }
+}
+
+#close-icon-inv{
+    height: 3rem;
+    float: right;
 }

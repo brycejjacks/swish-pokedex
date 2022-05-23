@@ -14,6 +14,10 @@ body {
 .filter{
     height: 35px;
 }
+.contain{
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
 .container {
     padding: 40px;
     margin: 0 auto;
@@ -105,7 +109,7 @@ h1 {
 .pokimg{
     display: flex;
     justify-content: end;
-    z-index: 0;
+    z-index: 0; 
  }
  .cart-hide{
      display: none;
@@ -200,8 +204,7 @@ height: 20rem;
     height: 6rem;
 }
 
-.bottomModal{
-}
+
 
 #imgElement{
     height: 3rem;

@@ -7,6 +7,10 @@ body {
     margin: 0;
     font-family: rubik;
 }
+.fade{
+    background-color: #4b6fd2b0;
+}
+
 .filter{
     height: 35px;
 }
@@ -59,9 +63,9 @@ h1 {
     height: 180px;
 }
 .card-number {
-    position: relative;
+    /* position: relative;
     top: 20vh;
-    left: 12vw;
+    left: 12vw; */
     background-color: #ecda0f;
     color: white;
     width: fit-content;
@@ -177,7 +181,7 @@ height: 20rem;
     color: black;
 }
 #pokeAbilities{
-    margin-top: 50%;
+    margin-top: 90%;
     height: 6rem;
 }
 
@@ -206,6 +210,7 @@ height: 20rem;
 }
 .modal-footer{
     margin-right: 40%;
+    border-style: none;
 }
 .hpss{
     display: flex;

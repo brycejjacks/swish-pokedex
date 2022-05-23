@@ -1,3 +1,16 @@
+const typeImg = {
+    water: "./media/Pokemon_Type_Icon_Water.png",
+    fire:"./media/Pokémon_Fire_Type_Icon 2.png",
+    bug:"./",
+    dark:"",
+    grass:"./media/Pokemon_Type_Icon_Grass.png",
+    posison:"./media/Pokemon_Type_Icon_Poison.png",
+
+}
+
+
+
+
 const userPokemonList = [
   {
     id: 1,
@@ -67,7 +80,7 @@ fetch("http://localhost:3000/api/pokedex")
             <div class="card-number">${pokedude.id}</div>
             <img class="card-image" src="${pokedude.image}"/>
             <h2 class="card-title"> ${pokedude.name}</h2>
-            <p class="card-subtitle">Type: ${pokedude.type}</p>
+            <p class="card-subtitle">Type: ${pokedude.types.join(", ")} <img class="" src= ${typeImg[pokedude.types[0]]} title="${pokedude.types[0]}"></p>
             <button type="button" class="btn btn-primary" id="triggerButton" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Launch demo modal
             </button>

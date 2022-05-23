@@ -4,7 +4,7 @@ body {
     background-attachment: fixed;
     background-size: cover;
     color: white;
-    margin: 0;
+   
     font-family: rubik;
 }
 .fade{
@@ -27,12 +27,17 @@ h1 {
 
 #pokedex {
     display: grid;
-    grid-template-columns: repeat(auto-fit, minmax(320px, 1fr));
+    grid-template-columns: repeat(auto-fit, minmax(310px, 2fr));
     grid-gap: 50px;
     padding-inline-start: 0;
+    margin-left: 10%;
+    margin-right: 10%;
+    
 }
 
 .card {
+    /* height:27rem ;
+    width: 27rem; */
     list-style: none;
     padding: 40px;
     background-color: rgb(234, 229, 229);
@@ -60,7 +65,11 @@ h1 {
 }
 
 .card-image {
-    height: 180px;
+    height: 250px;
+    width: 200px;
+    display: flex;
+    justify-content: center;
+    align-self: center;
 }
 .card-number {
     /* position: relative;
@@ -96,6 +105,7 @@ h1 {
 .pokimg{
     display: flex;
     justify-content: end;
+    z-index: 0;
  }
 #inventorybutton{
     height: 7vh;

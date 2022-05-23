@@ -25,7 +25,11 @@
       <div class="xbutton" id="xbutton">
         <img id="close-icon-inv" src="/src/client/media/Pokémon_Fire_Type_Icon 2.png" alt="">
       </div>
-      <div id="renderedInventory"></div>
+      <div id="renderedInventory">
+        <ul id="userPokemonList">
+          
+        </ul>
+      </div>
     </div>
   </div>
   
@@ -65,7 +69,7 @@
           <div class="footer1">
 
             <!-- <img id="plusInventory" src="/img/mac128 1.png" alt=""> -->
-            <h5 class="modal-title" id="PokeModalName" onclick="getDetails(${pokedude.id})">Charizard </h5>
+            <h5 class="modal-title" id="PokeModalName" onclick=`getDetails(${pokedude.id})`>Charizard </h5>
           </div>
         </div>
         

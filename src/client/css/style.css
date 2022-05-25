@@ -14,6 +14,10 @@ body {
 .filter{
     height: 35px;
 }
+.contain{
+    margin-left: 10rem;
+    margin-right: 10rem;
+}
 .container {
     padding: 40px;
     margin: 0 auto;
@@ -137,8 +141,7 @@ img.typeIcon{
 .pokimg{
     display: flex;
     justify-content: end;
-    z-index: 0;
-
+    z-index: 0;!important 
  }
  .cart-hide{
      display: none;
@@ -155,7 +158,8 @@ img.typeIcon{
     z-index: 500;
     right: 0%;
     top: 0%;
-    background-color: rgba(153, 51, 51, 0.497);
+    background-image: url(/src/client/media/pokdex-side.png);
+    background-size: contain;
 }    
 /* x close for inventory */
 .close-icon-inv{
@@ -268,24 +272,76 @@ font-weight: bolder;
     justify-content: space-around;
 }
 
-/* keyframe for sidebar slide */
 
-.slide{
-    animation: slide 25s linear both;
+/* pokemon in inventory */
+.cardside > img{
+    height: 5rem;
+    
 }
 
-@keyframes slide {
-    0% {
-        transform: translateX(1000px);
-        /* opacity: 0; */
-      }
-      100% {
-        transform: translateX(0);
-        opacity: 1;
-      }
-}
+
 
 #close-icon-inv{
     height: 3rem;
     float: right;
 }
+
+/* charizard gif */
+#charizardgif{
+    height: 5em;
+    position: -webkit-sticky;
+    position: sticky;
+    top: 0%;
+    float: right;
+    animation: fly 20s linear 1s infinite;
+}
+
+@keyframes fly {
+    0%{
+        transform: translateX(12rem);
+    }
+    
+    50%{
+        /* transform: translateY(75rem); */
+        transform: translateY(45rem);
+    }
+    70%{
+    }
+    100%{
+        transform: translateX(-145rem);
+    }
+
+}
+/* sidebar bottom gif */
+#pika{
+    background-color: rgba(255, 255, 255, 0);
+    height: 3rem;
+    /* position: -webkit-sticky;
+    position: sticky; */
+    position: absolute;
+    bottom: 0%;
+    animation: run 5s linear 1s infinite;
+}
+
+@keyframes run {
+    0%{
+    }
+    50%{
+        
+    }
+    100%{
+        
+        transform: translateX(20rem);
+    }
+}
+
+/* inventory li */
+.userPokemonLI{
+    display: flex;
+    /* flex-direction: row-reverse; */
+    justify-content: space-between;
+    align-items: baseline;
+    margin-right: 115px;
+    color: black;
+}
+

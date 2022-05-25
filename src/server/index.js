@@ -33,6 +33,13 @@ app.get('/api/pokedex', (req, res) => {
         res.sendStatus(500).json(e)
     })
 })
+app.get('/api/pokemon/:id', (req, res) => {
+  PokemonModel.findOne({id: req.params.id}).lean()
+  .then(pokemons => res.json(pokemons))
+  .catch(e => {
+      res.sendStatus(500).json(e)
+  })
+})
 
 app.listen(PORT, function (){
     console.log(`listening to port http://localhost:${PORT}`)

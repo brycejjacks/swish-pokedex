@@ -1,3 +1,16 @@
+const typeImg = {
+    water: "./media/Pokemon_Type_Icon_Water.png",
+    fire:"./media/Pokémon_Fire_Type_Icon 2.png",
+    bug:"./",
+    dark:"",
+    grass:"./media/Pokemon_Type_Icon_Grass.png",
+    poison:"./media/Pokemon_Type_Icon_Poison.png",
+
+}
+
+
+
+
 const userPokemonList = [
   {
     id: 1,
@@ -55,6 +68,14 @@ const userPokemonList = [
   },
 ];
 
+function mapTypes(typesArray) {
+    return typesArray.map(type => {
+        return `
+            <img class="typeIcon" src=${typeImg[type]} title=${type}>
+        `
+    })
+}
+
 fetch("http://localhost:3000/api/pokedex")
   .then((res) => res.json())
   .then((pokeList) => {
@@ -67,11 +88,12 @@ fetch("http://localhost:3000/api/pokedex")
             <div class="card-number">${pokedude.id}</div>
             <img class="card-image" src="${pokedude.image}"/>
             <h2 class="card-title"> ${pokedude.name}</h2>
-            <p class="card-subtitle">Type: ${pokedude.type}</p>
+            <p class="card-subtitle">
+                ${mapTypes(pokedude.types)}
+            </p>
             <button type="button" class="btn btn-primary" id="triggerButton" data-bs-toggle="modal" data-bs-target="#exampleModal">
                 Launch demo modal
             </button>
-             
         </li>
     `
       )
@@ -143,6 +165,11 @@ function getUserPokemonList() {
         const userPokemonLIImage = document.createElement('img');
         userPokemonLIImage.src = userPokemon.image;
         userPokemonLI.appendChild(userPokemonLIImage)
+
+        const typesUL = document.createElement('ul');
+        typesUL.classList.add('userListTypeIcon')
+        typesUL.innerHTML = mapTypes(userPokemon.types);
+        userPokemonLI.appendChild(typesUL)
 
         userPokemonListUL.appendChild(userPokemonLI);
     })

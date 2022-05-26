@@ -1,3 +1,27 @@
+const typeImg = {
+    water: "./media/Pokemon_Type_Icon_Water.png",
+    fire:"./media/Pokemon_Type_Icon_Fire.png",
+    bug:"./media/Pokemon_Type_Icon_Bug.png",
+    dark:"./media/Pokemon_Type_Icon_Dark.png",
+    grass:"./media/Pokemon_Type_Icon_Grass.png",
+    poison:"./media/Pokemon_Type_Icon_Poison.png",
+    fighting:"./media/Pokemon_Type_Icon_Fighting.png",
+    fairy:"./media/Pokemon_Type_Icon_Fairy.png",
+    electric:"./media/Pokemon_Type_Icon_Electric.png",
+    flying:"./media/Pokemon_Type_Icon_Flying.png",
+    ghost:"./media/Pokemon_Type_Icon_Ghost.png",
+    ground:"./media/Pokemon_Type_Icon_Ground.png",
+    ice:"./media/Pokemon_Type_Icon_Ice.png",
+    normal:"./media/Pokemon_Type_Icon_Normal.png",
+    psychic:"./media/Pokemon_Type_Icon_Psychic.png",
+    steel:"./media/Pokemon_Type_Icon_Steel.png",
+    rock:"./media/Pokemon_Type_Icon_Rock.png",
+    dragon:"./media/Pokemon_Type_Icon_Dragon.png",
+}
+
+
+
+
 const userPokemonList = [
   {
     id: 1,
@@ -40,7 +64,7 @@ const userPokemonList = [
     name: "coolGuy",
     image:
       "https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/150.png",
-    types: ["grass", "physic"],
+    types: ["grass", "psychic"],
     abilities: ["overgrow", "chlorophyll"],
     flavor_text:
       "A strange seed was planted on its back at birth. The plant sprouts and grows with this POKéMON.",
@@ -55,6 +79,15 @@ const userPokemonList = [
   },
 ];
 
+
+function mapTypes(typesArray) {
+    return typesArray.map(type => {
+        return `
+            <img class="typeIcon" src=${typeImg[type]} title=${type}>
+        `
+    })
+}
+
 fetch("http://localhost:3000/api/pokedex")
   .then((res) => res.json())
   .then((pokeList) => {
@@ -63,15 +96,14 @@ fetch("http://localhost:3000/api/pokedex")
     const pokemonHTMLString = pokeList
       .map(
         (pokedude) => `
-        <li class="card" onclick="updateInventory()">
+
+        <li class="card" id="triggerButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="updateInventory()">
             <div class="card-number">${pokedude.id}</div>
             <img class="card-image" src="${pokedude.image}"/>
             <h2 class="card-title"> ${pokedude.name}</h2>
-            <p class="card-subtitle">Type: ${pokedude.type}</p>
-            <button type="button" class="btn btn-primary" id="triggerButton" data-bs-toggle="modal" data-bs-target="#exampleModal">
-                Launch demo modal
-            </button>
-             
+            <p class="card-subtitle">
+                ${mapTypes(pokedude.types)}
+            </p>
         </li>
     `
       )
@@ -81,8 +113,8 @@ fetch("http://localhost:3000/api/pokedex")
 // open cart on click pokemon to cart
 document.getElementById("pokeimg").addEventListener("click", function () {
     document.querySelector(".cart-hide").classList.remove("cart-hide");
+    document.getElementById('inventorybutton').classList.add('cart-hide');
     getUserPokemonList();
-  // document.querySelector('.cart-hide').classList.add('slide');
 });
 
 // close side bar on click
@@ -91,16 +123,9 @@ document.getElementById("xbutton").addEventListener("click", function () {
   console.log("hello");
   document.getElementById('userPokemonList').innerHTML = ''
   document.querySelector(".cart-container").classList.add("cart-hide");
-  // document.querySelector('.cart-hide').style.display = 'none';
+  document.getElementById('inventorybutton').classList.remove('cart-hide');
 });
 
-// Array to catch pokemon
-const cartInv = [];
-
-// Update Inventory
-
-// inventory card variable
-let sideCards = document.getElementById("renderedInventory");
 
 // onclick="getDetails(${pokedude.id})"
 
@@ -115,16 +140,6 @@ function getDetails(id) {
     });
 }
 
-function updateInventory() {
-  sideCards.innerHTML = " ";
-  cartInv.forEach((pokedude) => {
-    sideCards.innerHTML += `
-        <li class="card">
-        <img class="card-image" src="${pokedude.image}"/>
-        </li>
-        `;
-  });
-}
 
 function getUserPokemonList() {
     //example
@@ -136,13 +151,23 @@ function getUserPokemonList() {
     console.log(userPokemonListUL)
 
     userPokemonList.forEach((userPokemon) => {
+
+        
+
         const userPokemonLI = document.createElement('li');
-        userPokemonLI.classList.add('card', 'userPokemonLI');
+        userPokemonLI.classList.add('cardside', 'userPokemonLI');
         userPokemonLI.innerHTML = userPokemon.name;
         
         const userPokemonLIImage = document.createElement('img');
         userPokemonLIImage.src = userPokemon.image;
-        userPokemonLI.appendChild(userPokemonLIImage)
+        
+        userPokemonLI.appendChild(userPokemonLIImage);
+
+        const typesUL = document.createElement('ul');
+        typesUL.classList.add('userListTypeIcon')
+        typesUL.innerHTML = mapTypes(userPokemon.types);
+        userPokemonLI.appendChild(typesUL);
+
 
         userPokemonListUL.appendChild(userPokemonLI);
     })

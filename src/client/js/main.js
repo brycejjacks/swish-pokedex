@@ -79,14 +79,6 @@ const userPokemonList = [
   },
 ];
 
-function mapTypes(typesArray) {
-    return typesArray.map(type => {
-        return `
-            <img class="typeIcon" src=${typeImg[type]} title=${type}>
-        `
-    })
-}
-
 fetch("http://localhost:3000/api/pokedex")
   .then((res) => res.json())
   .then((pokeList) => {
@@ -95,7 +87,7 @@ fetch("http://localhost:3000/api/pokedex")
     const pokemonHTMLString = pokeList
       .map(
         (pokedude) => `
-        <li class="card" id="triggerButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="updateInventory()">
+        <li class="card" id="triggerButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="getDetails(${pokedude.id})">
             <div class="card-number">${pokedude.id}</div>
             <img class="card-image" src="${pokedude.image}"/>
             <h2 class="card-title"> ${pokedude.name}</h2>
@@ -135,13 +127,13 @@ let sideCards = document.getElementById("renderedInventory");
 // onclick="getDetails(${pokedude.id})"
 
 function getDetails(id) {
-  fetch(`localhost:3000/api/pokemon/${id}`)
-    .then(res.json())
+  fetch(`http://localhost:3000/api/pokemon/${id}`)
+    .then(res => res.json())
     .then((res) => {
-      `
-                <h1>${res.name}</h1>
-                <>
-            `;
+        document.getElementById('PokeModalName').innerHTML = capitalizeFirstLetter(res.name);
+        document.getElementById('detailsId').innerHTML = `#${String(res.id).padStart(3,0)}`
+        document.getElementById('detailsDescription').innerHTML = res.flavor_text
+        document.getElementById('detailsPokemonImg').src = res.image
     });
 }
 
@@ -181,4 +173,16 @@ function getUserPokemonList() {
 
         userPokemonListUL.appendChild(userPokemonLI);
     })
+}
+
+///// Helper functions
+function mapTypes(typesArray) {
+  return typesArray.map(type => {
+      return `
+          <img class="typeIcon" src=${typeImg[type]} title=${type}>
+      `
+  })
+}
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
 }

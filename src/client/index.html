@@ -11,7 +11,7 @@
   <!-- css -->
   <link rel="stylesheet" href="./css/style.css">
   <!-- JavaScript -->
-  <script src="./js/main.js" defer type="module"></script>
+  <script src="./js/main.js" defer></script>
 </head>
 
 <body>
@@ -90,7 +90,7 @@
           <div class="footer1">
 
             <!-- <img id="plusInventory" src="/img/mac128 1.png" alt=""> -->
-            <h5 class="modal-title" id="PokeModalName" onclick=`getDetails(${pokedude.id})`>Charizard </h5>
+            <h5 class="modal-title" id="PokeModalName">Charizard </h5>
           </div>
         </div>
         
@@ -119,9 +119,9 @@
             <!-- Right Side of mOdal -->
             <div class="getZindex">
               
-              <div class="smallbox">#007</div>
+              <div id="detailsId"class="smallbox">#007</div>
               <!-- <div class="indexPoke">  </div> -->
-              <img id="rightpicture" src="/src/client/media/pokemon-png-18173 (1) 1.png" alt="" >
+              <img id="detailsPokemonImg" src="/src/client/media/pokemon-png-18173 (1) 1.png" alt="" >
               <img id="rightpicture-two" src="/src/client/media/—Pngtree—golden technology lighting light effect_5524383.png" alt="" >
             </div>
               
@@ -129,7 +129,7 @@
           <!-- Description of pokemon -->
           <div class="bottomModal">
             <h3>Description</h3>                   
-            <p>Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, dicta?</p>
+            <p id="detailsDescription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, dicta?</p>
           </div>
           
           <!-- Stats of pokemon -->

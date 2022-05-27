@@ -15,8 +15,8 @@ body {
     height: 35px;
 }
 .contain{
-    margin-left: 10rem;
-    margin-right: 10rem;
+    /* margin-left: 10rem;
+    margin-right: 10rem; */
 }
 .container {
     padding: 40px;
@@ -211,16 +211,24 @@ font-weight: bolder;
 }
 #rightpicture{
     height: 20rem;
-    margin-left: 15px;
+    margin-left: px;
 }
 #rightpicture-two{
     height: 20rem;  
-    margin-top: -14rem;
+    margin-top: -12rem;
+  margin-left: -1rem;
 }
 .indexPoke{
     background-color: yellow;
     height: 20px;
     width: 40px;
+}
+.details-img{
+    height: 15rem;
+    margin-left: 1.5rem;
+    /* animation: bounce 3.1s ease-in  infinite ;
+    transition: transform 900ms ease-in-out 505ms;
+    transform: scale(1.1) initial; */
 }
 
 /* left side of modal */
@@ -236,16 +244,19 @@ font-weight: bolder;
     color: black;
 }
 #pokeAbilities{
-    margin-top: 90%;
+    margin-top: 9rem;
     height: 6rem;
+}
+.deatailsTypeIcon{
+    margin-top: ;
 }
 
 #pokeDescription{
     background-color: rgba(0, 0, 0, 0.216);
-    height: 6rem;
 }
 
 .bottomModal{
+    margin-top: -4rem;
 }
 
 #imgElement{
@@ -254,7 +265,11 @@ font-weight: bolder;
 
 #elementBox{
     height: 4rem;
-    margin-top: 2rem;
+    
+}
+#detailsType {
+    display:grid;
+    /* justify-content: space-around; */
 }
 
 /* stats of pokemon*/
@@ -267,11 +282,16 @@ font-weight: bolder;
     margin-right: 40%;
     border-style: none;
 }
+.evoPokemon{
+    margin-top: 1rem;
+}
 .hpss{
     display: flex;
     justify-content: space-around;
 }
-
+.hpss img{
+    height: 50px;
+}
 
 /* pokemon in inventory */
 .cardside > img{

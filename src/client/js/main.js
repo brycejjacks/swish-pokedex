@@ -133,10 +133,18 @@ function getDetails(id) {
   fetch(`localhost:3000/api/pokemon/${id}`)
     .then(res.json())
     .then((res) => {
+<<<<<<< Updated upstream
       `
                 <h1>${res.name}</h1>
                 <>
             `;
+=======
+        document.getElementById('PokeModalName').innerHTML = capitalizeFirstLetter(res.name);
+        document.getElementById('detailsType').innerHTML = mapTypes(res.types)
+        document.getElementById('detailsId').innerHTML = `#${String(res.id).padStart(3,0)}`
+        document.getElementById('detailsDescription').innerHTML = res.flavor_text
+        document.getElementById('detailsPokemonImg').src = res.image
+>>>>>>> Stashed changes
     });
 }
 
@@ -172,3 +180,18 @@ function getUserPokemonList() {
         userPokemonListUL.appendChild(userPokemonLI);
     })
 }
+<<<<<<< Updated upstream
+=======
+
+///// Helper functions
+function mapTypes(typesArray) {
+  return typesArray.map(type => {
+      return `
+          <img class="typeIcon" src=${typeImg[type]} title=${type}>
+      `
+  })
+}
+function capitalizeFirstLetter(string) {
+  return string.charAt(0).toUpperCase() + string.slice(1);
+}
+>>>>>>> Stashed changes

@@ -90,7 +90,7 @@ fetch("http://localhost:3000/api/pokedex")
       .map(
         (pokedude) => `
         <li class="card" id="triggerButton" data-bs-toggle="modal" data-bs-target="#exampleModal" onclick="getDetails(${pokedude.id})">
-            <div class="card-number">${pokedude.id}</div>
+            <div class="card-number">#${String(pokedude.id).padStart(3,0)}</div>
             <img class="card-image" src="${pokedude.image}"/>
             <h2 class="card-title"> ${pokedude.name}</h2>
             <p class="card-subtitle">
@@ -128,9 +128,14 @@ function getDetails(id) {
     .then((res) => {
         document.getElementById('PokeModalName').innerHTML = capitalizeFirstLetter(res.name);
         document.getElementById('detailsType').innerHTML = mapTypes(res.types)
+        document.getElementById('pokeAbilities').innerHTML = res.abilities      
         document.getElementById('detailsId').innerHTML = `#${String(res.id).padStart(3,0)}`
         document.getElementById('detailsDescription').innerHTML = res.flavor_text
         document.getElementById('detailsPokemonImg').src = res.image
+        document.getElementById('display-stats-hp').innerHTML = res.stats.find((obj) => obj.name === 'hp').value
+        document.getElementById('display-stats-attack').innerHTML = res.stats.find((obj) => obj.name === 'attack').value
+        document.getElementById('display-stats-defense').innerHTML = res.stats.find((obj) => obj.name === 'defense').value
+        document.getElementById('display-stats-speed').innerHTML = res.stats.find((obj) => obj.name === 'speed').value
     });
 }
 

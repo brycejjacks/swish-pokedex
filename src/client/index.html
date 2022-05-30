@@ -61,8 +61,8 @@
   
   <div class="cart-container cart-hide">
     <div class="cart-body">
-      <div class="xbutton" id="xbutton">
-        <img id="close-icon-inv" src="/src/client/media/pokeball4.png" alt="">
+      <div class="xbutton sticky-top me-3 mt-2" id="xbutton">
+        <img id="close-icon-inv" src="/src/client/media/open-pokeball.png" alt="">
       </div>
       <div id="renderedInventory">
         <h1 id="pokedextitle">Pokedex</h1>
@@ -89,33 +89,36 @@
 
         <!-- Top of Modal  -->
         <!-- Add to inventory -->
-        <div class="modal-footer">
-          <div class="footer1">
-
-            <!-- <img id="plusInventory" src="/img/mac128 1.png" alt=""> -->
-            <h5 class="modal-title" id="PokeModalName">Charizard </h5>
+       
+          <div class="footer1 d-flex justify-content-center">
+            <img class="details-title " src="/src/client/media/details-header.png" alt="">
+            <h5 class="modal-title " id="PokeModalName"></h5>
+            <img class="details-title " src="/src/client/media/details-header.png" alt="">
+            <!-- <button type="button container" class="btn-close mt-3 ms-" data-bs-dismiss="modal" aria-label="Close"></button> -->
           </div>
-        </div>
-        
-        <button type="button" class="btn-close" data-bs-dismiss="modal" aria-label="Close"></button>
-          
+       
+    
         </div>
         <!-- Center of Modal -->
-        <div class="modal-body" >
+        <div class="modal-wrap collapse" id="collapseExample">
+
+        </div>
+        <div class="modal-body">
           <div class="InventoryBody">
             <div class="leftside">
               <div id="elementBox">
                 <h2>Type</h2>
-                <img id="imgElement" src="/src/client/media/Pokémon_Fire_Type_Icon 2.png" alt="">
-                <img id="imgElement" src="/src/client/media/Pokémon_Water_Type_Icon 2.png" alt="">
+                 <ul id="detailsType"></ul>
                 <!-- <img id="imgElement" src="/img/Pokémon_Water_Type_Icon 2.png" alt=""> -->
               </div>
               
-              <div id="pokeAbilities"> 
+              <div class="detail-abilites"> 
                 <h2>Abilities</h2>
-                <ul>
-                  <li>ability 1</li>
-                  <li>ability 2</li>
+                <ul id="pokeAbilities">
+                  
+                </ul>
+                  <!-- <li id="pokeAbilities"></li> -->
+                  <!-- <li id="pokeAbilities"></li> -->
                 </ul>
               </div>
             </div>
@@ -124,7 +127,7 @@
               
               <div id="detailsId"class="smallbox">#007</div>
               <!-- <div class="indexPoke">  </div> -->
-              <img id="detailsPokemonImg" src="/src/client/media/pokemon-png-18173 (1) 1.png" alt="" >
+              <img id="detailsPokemonImg" class="details-img" alt="" >
               <img id="rightpicture-two" src="/src/client/media/—Pngtree—golden technology lighting light effect_5524383.png" alt="" >
             </div>
               
@@ -140,18 +143,31 @@
           <div class="evoPokemon">
             <h2>Stats</h2>
             <div class="hpss">
-              <h4>HP</h4>
-              <h4>Attack</h4>
-              <h4>Shield</h4>
-              <h4>Speed</h4>
+              <img src="./media/health-gold.png" title="Health">
+              <img src="./media/attack-gold.png" title="Attack">
+              <img src="./media/shield-gold.png" title="Defense">
+              <img src="./media/speed-gold.png" title="Speed">
             </div>
-          </div>      
+            <div class="hpss" id="display-stats">
+              <p id="display-stats-hp"></p>
+              <p id="display-stats-attack"></p>
+              <p id="display-stats-defense"></p>
+              <p id="display-stats-speed"></p>
+            </div>
+            <div class="catch-em d-flex justify-content-center  align-center">
+              <button type="button" class="btn btn-warning ">
+                Catch 'Em
+                <img id=""class="ms-2" src="/src/client/media/open-pokeball.png" alt="">
+              </button>
+
+            </div>
+          </div>   
         </div>
       </div>
   </div>
 </div>
 </div>
-
+  </div>
   <!-- Footer -->
 
   <div class="footer-container">

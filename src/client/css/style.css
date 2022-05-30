@@ -15,13 +15,13 @@ body {
     height: 35px;
 }
 .contain{
-    margin-left: 10rem;
-    margin-right: 10rem;
+    margin-left: 10%;
+    margin-right: 10%;
 }
-.container {
+/* .container {
     padding: 40px;
     margin: 0 auto;
-}
+} */
 
 h1 {
     text-transform: uppercase;
@@ -159,7 +159,10 @@ img.typeIcon{
     right: 0%;
     top: 0%;
     background-image: url(/src/client/media/pokdex-side.png);
-    background-size: contain;
+    background-color: #fe0202e4;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23f8a88f'/%3E%3Cstop offset='1' stop-color='%23f8a88f' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ffdcce'/%3E%3Cstop offset='1' stop-color='%23ffdcce' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23f78f76'/%3E%3Cstop offset='1' stop-color='%23f78f76' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FFF0E9'/%3E%3Cstop offset='1' stop-color='%23FFF0E9' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23E75B40'/%3E%3Cstop offset='1' stop-color='%23E75B40' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FFC5B3'/%3E%3Cstop offset='1' stop-color='%23FFC5B3' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
 }    
 /* x close for inventory */
 .close-icon-inv{
@@ -172,27 +175,43 @@ img.typeIcon{
 }
 /* modal css */
 .modal-header,.modal-body{
-    border: 15px solid rgba(0, 0, 0, 0.732);  
+    border: 10px solid rgba(248, 36, 13, 0.732); 
 }
+.modal-header{
+    padding: 0%;
+}
+
 .modal{
     color: black;
 }
 .modal-content{
-    background-color: rgb(243, 242, 232);
+    background-color: #FFF0E9;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23f8a88f'/%3E%3Cstop offset='1' stop-color='%23f8a88f' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ffdcce'/%3E%3Cstop offset='1' stop-color='%23ffdcce' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23f78f76'/%3E%3Cstop offset='1' stop-color='%23f78f76' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FFF0E9'/%3E%3Cstop offset='1' stop-color='%23FFF0E9' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23E75B40'/%3E%3Cstop offset='1' stop-color='%23E75B40' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FFC5B3'/%3E%3Cstop offset='1' stop-color='%23FFC5B3' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
 }
 .getZindex{
     padding-left: 3em;
 }
-.btn-close{
-    margin-right: 5rem;
+.modal-title {
+    display: flex; 
+    align-self: center;
+  justify-content: center;
+  
+    
 }
-.footer1{
-    display: flex;
-    justify-content: center;
+.details-title {
+    margin-left: 1rem; !important
 }
-.modal-footer{
+
+.footer1 img{
     display: flex;
-    justify-content: space-between;
+    align-self: center;
+   justify-content: center;
+   align-items: center;
+    width: 25%; !important
+   padding: 0px; !important
+    
 }
 .insideofcard{
     background-color: black;
@@ -215,12 +234,22 @@ font-weight: bolder;
 }
 #rightpicture-two{
     height: 20rem;  
-    margin-top: -14rem;
+    margin-top: -24rem;
+    margin-top: -12rem;
+    margin-left: -1rem;
 }
 .indexPoke{
     background-color: yellow;
     height: 20px;
     width: 40px;
+}
+.details-img{
+    height: 15rem;
+    margin-left: 1.5rem;
+    margin-top: -50px;
+    /* animation: bounce 3.1s ease-in  infinite ;
+    transition: transform 900ms ease-in-out 505ms;
+    transform: scale(1.1) initial; */
 }
 
 /* left side of modal */
@@ -235,17 +264,22 @@ font-weight: bolder;
     width: fit-content;
     color: black;
 }
-#pokeAbilities{
-    margin-top: 90%;
+.detail-abilites{
+    display: grid;
+    margin-top: 8rem;
     height: 6rem;
 }
-
+#pokeAbilities{
+   margin-left: -30px;
+    
+}
 #pokeDescription{
     background-color: rgba(0, 0, 0, 0.216);
-    height: 6rem;
+    /* height: 6rem; */
 }
 
 .bottomModal{
+    margin-top: -2rem;
 }
 
 #imgElement{
@@ -254,7 +288,6 @@ font-weight: bolder;
 
 #elementBox{
     height: 4rem;
-    margin-top: 2rem;
 }
 
 /* stats of pokemon*/
@@ -264,15 +297,38 @@ font-weight: bolder;
     justify-content: center;
 }
 .modal-footer{
+    display: flex;
+    justify-content: center;
     margin-right: 40%;
     border-style: none;
+    max-width: fit-content;
 }
 .hpss{
     display: flex;
     justify-content: space-around;
 }
-
-
+.hpss img{
+    height: 50px;
+}
+.evoPokemon{
+    margin-top: 1rem;
+}
+.catch-em{
+    display: inline-flex
+}
+.catch-em p{
+    font-size: ;
+}
+.catch-em img{
+    height: 40px;
+}
+.catch-em .btn-warning{
+    background: radial-gradient(rgb(250, 222, 12), rgb(234, 233, 228));
+}
+.catch-em .btn:hover{
+    background: radial-gradient( rgb(244, 242, 233),rgb(250, 222, 12));
+    color: rgb(8, 8, 8);
+  }
 /* pokemon in inventory */
 .cardside > img{
     height: 5rem;

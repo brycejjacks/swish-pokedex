@@ -61,7 +61,7 @@ h1 {
     height: 7rem;
 }
 img.typeIcon{
-    height: 4rem;
+    height: 2rem;
 }
 .card:hover {
     /* animation: bounce 1.1s ease-in-out forwards infinite reverse; */
@@ -151,20 +151,16 @@ img.typeIcon{
     z-index: 200;
 }
 .cart-container{
-    width: 400px;
+    width: 34vw;
     height: 100vh;
    overflow-y: scroll;
     position: fixed;
     z-index: 500;
     right: 0%;
     top: 0%;
-    background-image: url(/src/client/media/pokdex-side.png);
-    background-size: contain;
+    background-size: cover;
+    background-color: red;
 }    
-/* x close for inventory */
-.close-icon-inv{
-    height: 1em;
-}
 
 .footer-container img{
     width: 100%;
@@ -281,8 +277,9 @@ font-weight: bolder;
 
 
 #close-icon-inv{
-    height: 3rem;
+    height: 4rem;
     float: right;
+    margin-top: 4%;
 }
 
 /* charizard gif */
@@ -292,21 +289,24 @@ font-weight: bolder;
     position: sticky;
     top: 0%;
     float: right;
-    animation: fly 20s linear 1s infinite;
+    animation: fly 10s linear 1s infinite;
 }
 
 @keyframes fly {
     0%{
-        transform: translateX(12rem);
+    }
+   
+    
+    33%{
+        transform: translate(-32.1rem, 65ex);
+        
+    }
+    66%{
+        transform: translate(-87rem, 30ex);
     }
     
-    50%{
-        /* transform: translateY(75rem); */
-        transform: translateY(45rem);
-    }
-    70%{
-    }
     100%{
+        
         transform: translateX(-145rem);
     }
 
@@ -315,11 +315,9 @@ font-weight: bolder;
 #pika{
     background-color: rgba(255, 255, 255, 0);
     height: 3rem;
-    /* position: -webkit-sticky;
-    position: sticky; */
     position: absolute;
-    bottom: 0%;
-    animation: run 5s linear 1s infinite;
+    bottom: 1.4%;
+    animation: run 3s linear .1s infinite;
 }
 
 @keyframes run {
@@ -330,17 +328,61 @@ font-weight: bolder;
     }
     100%{
         
-        transform: translateX(20rem);
+        transform: translateX(27.5rem);
     }
 }
 
 /* inventory li */
 .userPokemonLI{
-    display: flex;
-    /* flex-direction: row-reverse; */
-    justify-content: space-between;
+    /* display: flex; */
+    /* justify-content: space-between; */
     align-items: baseline;
     margin-right: 115px;
     color: black;
+    position: relative;
+    top: 13em;
+    font-size: 20px;
 }
 
+
+.userListTypeIcon{
+    display: flex;
+    margin-bottom: 2rem;
+
+}
+
+#pokedextitle {
+    font-weight: 1000;
+    text-decoration: underline;
+text-shadow: 4.5px 4px #010006;
+}
+
+
+.pokemon-background{
+    background-image: url(/src/client/media/—Pngtree—round\ line\ light\ spot\ technology_4023954.png);
+    background-size: 10rem;
+    background-position: center;
+    border-radius: 45%;
+    animation: image 3s infinite;
+    position: relative;
+    left: 20%;
+}
+/* @keyframes image {
+    0%{
+        background-image: url(/src/client/media/—Pngtree—round\ line\ light\ spot\ technology_4023954.png);
+        transform: rotate();
+    }
+    50%{  
+        background-image: url(/src/client/media/—Pngtree—round\ line\ light\ spot\ technology_4023954.png);
+        background-size: 10rem;
+        background-position: center;
+        transform: rotate(180deg);
+    }
+    100%{
+        background-image: url(/src/client/media/—Pngtree—round\ line\ light\ spot\ technology_4023954.png);
+        background-size: 10rem;
+        background-position: center;
+        border-radius: 45%;
+        transform: rotate(360deg);
+    }
+} */

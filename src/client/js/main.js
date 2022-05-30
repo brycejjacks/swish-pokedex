@@ -20,7 +20,9 @@ const typeImg = {
 }
 
 
-
+const bluelightImg = {
+  image: ""
+};
 
 const userPokemonList = [
   {
@@ -104,6 +106,7 @@ fetch("http://localhost:3000/api/pokedex")
 document.getElementById("pokeimg").addEventListener("click", function () {
     document.querySelector(".cart-hide").classList.remove("cart-hide");
     document.getElementById('inventorybutton').classList.add('cart-hide');
+    document.querySelector(".cart-container").classList.add("slide");
     getUserPokemonList();
 });
 
@@ -124,6 +127,7 @@ function getDetails(id) {
     .then(res => res.json())
     .then((res) => {
         document.getElementById('PokeModalName').innerHTML = capitalizeFirstLetter(res.name);
+        document.getElementById('detailsType').innerHTML = mapTypes(res.types)
         document.getElementById('detailsId').innerHTML = `#${String(res.id).padStart(3,0)}`
         document.getElementById('detailsDescription').innerHTML = res.flavor_text
         document.getElementById('detailsPokemonImg').src = res.image
@@ -149,11 +153,17 @@ function getUserPokemonList() {
         userPokemonLI.innerHTML = userPokemon.name;
         
         const userPokemonLIImage = document.createElement('img');
+        userPokemonLIImage.classList.add('pokemon-background')
         userPokemonLIImage.src = userPokemon.image;
+
+      const bluelight = document.createElement('img');
+      bluelight.classList.add('rotate-background')
+      bluelight.src = 
+
         
         userPokemonLI.appendChild(userPokemonLIImage);
 
-        const typesUL = document.createElement('ul');
+        const typesUL = document.createElement('li');
         typesUL.classList.add('userListTypeIcon')
         typesUL.innerHTML = mapTypes(userPokemon.types);
         userPokemonLI.appendChild(typesUL);

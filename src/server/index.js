@@ -38,6 +38,14 @@ app.get('/api/pokedex', (req, res) => {
         res.sendStatus(500).json(e)
     })
 })
+app.get('/api/pokedex/:name', (req, res) => {
+  const regex = new RegExp(req.params.name, 'i') // i for case insensitive
+  PokemonModel.find({name: {$regex: regex}}).lean()
+  .then(pokemons => res.json(pokemons))
+  .catch(e => {
+      res.sendStatus(500).json(e)
+  })
+})
 app.get('/api/pokemon/:id', (req, res) => {
   PokemonModel.findOne({id: req.params.id}).lean()
   .then(pokemons => res.json(pokemons))

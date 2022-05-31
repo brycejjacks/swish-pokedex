@@ -5,6 +5,7 @@ body {
     background-size: cover;
     color: white;
     font-family: rubik;
+    
 }
 
 .fade{
@@ -15,8 +16,8 @@ body {
     height: 35px;
 }
 .contain{
-    margin-left: 10%;
-    margin-right: 10%;
+   padding-left: 10%;
+   padding-right: 10%;
 }
 /* .container {
     padding: 40px;
@@ -61,7 +62,7 @@ h1 {
     height: 7rem;
 }
 img.typeIcon{
-    height: 2rem;
+    height: 4rem;
 }
 .card:hover {
     /* animation: bounce 1.1s ease-in-out forwards infinite reverse; */
@@ -201,6 +202,9 @@ img.typeIcon{
 .details-title {
     margin-left: 1rem; !important
 }
+#detailsType{
+    margin-left: -1.5rem;
+}
 
 .footer1 img{
     display: flex;
@@ -268,7 +272,7 @@ font-weight: bolder;
     height: 6rem;
 }
 #pokeAbilities{
-   margin-left: -30px;
+   margin-left: -10px;
     
 }
 #pokeDescription{
@@ -335,9 +339,9 @@ font-weight: bolder;
 
 
 #close-icon-inv{
-    height: 4rem;
+    height: 3.5rem;
     float: right;
-    margin-top: 4%;
+    margin-top: %;
 }
 
 /* charizard gif */
@@ -386,7 +390,7 @@ font-weight: bolder;
     }
     100%{
         
-        transform: translateX(27.5rem);
+        transform: translateX(37.5rem);
     }
 }
 

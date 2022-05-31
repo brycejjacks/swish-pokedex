@@ -32,15 +32,22 @@ app.use(express.json())
 app.use(express.static(clientPath))
 
 app.get('/api/pokedex', (req, res) => {
-    PokemonModel.find().lean()
+    PokemonModel.find({}, '-flavor_text -abilities -stats').lean()
     .then(pokemons => res.json(pokemons))
     .catch(e => {
         res.sendStatus(500).json(e)
     })
 })
-app.get('/api/pokedex/:name', (req, res) => {
+app.get('/api/pokedex/name/:name', (req, res) => {
   const regex = new RegExp(req.params.name, 'i') // i for case insensitive
-  PokemonModel.find({name: {$regex: regex}}).lean()
+  PokemonModel.find({name: {$regex: regex}}, '-flavor_text -abilities -stats').lean()
+  .then(pokemons => res.json(pokemons))
+  .catch(e => {
+      res.sendStatus(500).json(e)
+  })
+})
+app.get('/api/pokedex/type/:type', (req, res) => {
+  PokemonModel.find({types: req.params.type}, '-flavor_text -abilities -stats').lean()
   .then(pokemons => res.json(pokemons))
   .catch(e => {
       res.sendStatus(500).json(e)

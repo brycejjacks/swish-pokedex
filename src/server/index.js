@@ -1,13 +1,10 @@
 import express from "express";
 import cors from "cors";
-//import path from 'path';
 import mongoose from 'mongoose';
 import path from 'path';
-import crypto from 'crypto';
 import bcrypt from 'bcryptjs';
 import jwt from 'jsonwebtoken';
 
-import fetch from "node-fetch";
 import { PokemonModel } from "./schemas/pokemon.schema.js";
 import { UserModel } from "./schemas/user.schema.js";
 
@@ -17,6 +14,7 @@ const MONGO_URI = "mongodb://127.0.0.1:27017/swish-pokedex"
 
 const __dirname = path.resolve();
 console.log(__dirname)
+const clientPath = path.join(__dirname, 'src/client')
 
 const saltRounds = 10;
 const access_secret = '1234567890'
@@ -31,6 +29,7 @@ mongoose
 const app = express();
 app.use(cors());
 app.use(express.json())
+app.use(express.static(clientPath))
 
 app.get('/api/pokedex', (req, res) => {
     PokemonModel.find().lean()
@@ -98,6 +97,9 @@ app.post('/api/vaid-username', function(req, res) {
       }
     })
 });
+app.all('/*', (req, res) => {
+  res.sendFile(clientPath)
+})
 
 app.listen(PORT, function (){
     console.log(`listening to port http://localhost:${PORT}`)

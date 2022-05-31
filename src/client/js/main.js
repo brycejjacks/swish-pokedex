@@ -94,7 +94,7 @@ fetch("http://localhost:3000/api/pokedex")
             <img class="card-image" src="${pokedude.image}"/>
             <h2 class="card-title"> ${pokedude.name}</h2>
             <p class="card-subtitle">
-                ${mapTypes(pokedude.types)}
+                ${mapTypes(pokedude.types).join('')}
             </p>
         </li>
     `
@@ -114,7 +114,7 @@ document.getElementById("pokeimg").addEventListener("click", function () {
 
 document.getElementById("xbutton").addEventListener("click", function () {
   console.log("hello");
-  document.getElementById('userPokemonList').innerHTML = ''
+  // document.getElementById('userPokemonList').innerHTML = ''
   document.querySelector(".cart-container").classList.add("cart-hide");
   document.getElementById('inventorybutton').classList.remove('cart-hide');
 });
@@ -127,8 +127,8 @@ function getDetails(id) {
     .then(res => res.json())
     .then((res) => {
         document.getElementById('PokeModalName').innerHTML = capitalizeFirstLetter(res.name);
-        document.getElementById('detailsType').innerHTML = mapTypes(res.types)
-        document.getElementById('pokeAbilities').innerHTML = res.abilities      
+        document.getElementById('detailsType').innerHTML = mapTypes(res.types).join('')
+        document.getElementById('pokeAbilities').innerHTML = mapAbilities(res.abilities).join('')   
         document.getElementById('detailsId').innerHTML = `#${String(res.id).padStart(3,0)}`
         document.getElementById('detailsDescription').innerHTML = res.flavor_text
         document.getElementById('detailsPokemonImg').src = res.image
@@ -140,16 +140,18 @@ function getDetails(id) {
 }
 
 
-function getUserPokemonList() {
+function getUserPokemonList(id) {
     //example
-    // fetch(`localhost:3000/api/getUserPokemonList/${userId}`).then(res => res.json()).then((userlist) => {
+    // fetch(`localhost:3000/api/getUserPokemonList/${id}`)
+    // .then(res => res.json())
+    // .then((userPokemon) => {
 
     // })
 
     const userPokemonListUL = document.getElementById('userPokemonList');
     console.log(userPokemonListUL)
 
-    userPokemonList.forEach((userPokemon) => {
+         userPokemonList.forEach((userPokemon) => {
 
         
 
@@ -161,9 +163,9 @@ function getUserPokemonList() {
         userPokemonLIImage.classList.add('pokemon-background')
         userPokemonLIImage.src = userPokemon.image;
 
-      const bluelight = document.createElement('img');
-      bluelight.classList.add('rotate-background')
-      bluelight.src = 
+        // const bluelight = document.createElement('img');
+        // bluelight.classList.add('rotate-background')
+        // bluelight.src = 
 
         
         userPokemonLI.appendChild(userPokemonLIImage);
@@ -178,7 +180,16 @@ function getUserPokemonList() {
     })
 }
 
+
+
 ///// Helper functions
+function mapAbilities(abilityArray) {
+  return abilityArray.map(ability => {
+      return `
+         <li>${ability}</li>
+      `
+  })
+}
 function mapTypes(typesArray) {
   return typesArray.map(type => {
       return `

@@ -15,6 +15,10 @@ body {
 .filter{
     height: 35px;
 }
+.input-group{
+    margin-left:35% ;
+    margin-right: 35%;
+}
 .contain{
    padding-left: 10%;
    padding-right: 10%;

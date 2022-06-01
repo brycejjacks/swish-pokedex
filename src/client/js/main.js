@@ -20,6 +20,36 @@ const typeImg = {
 }
 
 
+
+// search bar 
+
+// get value of input
+let filterInput = document.getElementById('filterInput');
+
+filterInput.addEventListener('keyup', filterNames);
+
+function filterNames(){
+  console.log(1)
+  let filterValue = document.getElementById('filterInput').value.toUpperCase();
+  console.log(filterValue)
+
+  // let pokemonNames = document.getElementById('triggerButton');
+
+  let li= document.querySelectorAll('.card')
+
+  for (let i = 0; i < li.length; i++){
+    let a = li[i].getElementsByTagName('h2')[0];
+    console.log(a.innerHTML)
+    
+    if(a.innerHTML.toUpperCase().indexOf(filterValue) > -1) {
+      li[i].style.display = '';
+    }
+    else {
+      li[i].style.display = 'none';
+    }
+  }
+}
+
 const bluelightImg = {
   image: ""
 };
@@ -113,7 +143,6 @@ document.getElementById("pokeimg").addEventListener("click", function () {
 // close side bar on click
 
 document.getElementById("xbutton").addEventListener("click", function () {
-  console.log("hello");
   // document.getElementById('userPokemonList').innerHTML = ''
   document.querySelector(".cart-container").classList.add("cart-hide");
   document.getElementById('inventorybutton').classList.remove('cart-hide');

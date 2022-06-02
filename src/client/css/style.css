@@ -58,10 +58,10 @@ h1 {
 .userPokeMonLI{
     top: 30px;
 }
-.cardSide{
-    margin-top: 50px;
+/* .cardSide{
+    margin-top: 30px;
     display: inline;
-}
+} */
 .cardSide img{
     height: 7rem;
 }
@@ -402,19 +402,20 @@ font-weight: bolder;
 .userPokemonLI{
     /* display: flex; */
     /* justify-content: space-between; */
-    align-items: baseline;
-    margin-right: 115px;
+    display: inline-flex;
+    justify-content:space-evenly;
+    list-style: none;
+    align-items: center;
+    margin-left: rem;
     color: black;
-    position: relative;
-    top: 13em;
+    /* position: relative; */
+    top: 1em;
     font-size: 20px;
 }
 
 
 .userListTypeIcon{
     display: flex;
-    margin-bottom: 2rem;
-
 }
 
 #pokedextitle {
@@ -430,7 +431,7 @@ text-shadow: 4.5px 4px #010006;
     background-position: center;
     border-radius: 45%;
     animation: image 3s infinite;
-    position: relative;
+    /* position: relative; */
     left: 20%;
 }
 /* @keyframes image {

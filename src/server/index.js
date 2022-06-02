@@ -56,7 +56,7 @@ app.get('/api/pokedex/type/:type', (req, res) => {
 app.get('/api/pokemon/:id', (req, res) => {
   PokemonModel.findOne({id: req.params.id}).lean()
   .then(pokemons => res.json(pokemons))
-  .catch(e => {
+  .catch((e) => {
       res.sendStatus(500).json(e)
   })
 })

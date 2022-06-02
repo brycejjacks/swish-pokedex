@@ -27,31 +27,30 @@
   <div class="input d-flex justify-content-center">
     <div class="input-group  d-flex justify-content-center" >
       <input type="text" id="filterInput" class="form-control w-25 w-sm-25" aria-label="Text input with segmented dropdown button">
-      <button type="button" class="btn btn-warning">Search</button>
       <button type="button" class="btn btn-warning  dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
         <img src="./media/filter.png" class="img-fluid filter">
       </button>
       <ul class="dropdown-menu dropdown-menu-end">
-        <li><a class="dropdown-item" href="#">Fire</a></li>
-        <li><a class="dropdown-item" href="#">Water</a></li>
-        <li><a class="dropdown-item" href="#">Dark</a></li>
-        <li><a class="dropdown-item" href="#">Electric</a></li>
-        <li><a class="dropdown-item" href="#">Fairy</a></li>
-        <li><a class="dropdown-item" href="#">Fighting</a></li>
-        <li><a class="dropdown-item" href="#">Flying</a></li>
-        <li><a class="dropdown-item" href="#">Ghost</a></li>
-        <li><a class="dropdown-item" href="#">Grass</a></li>
-        <li><a class="dropdown-item" href="#">Ground</a></li>
-        <li><a class="dropdown-item" href="#">Ice</a></li>
-        <li><a class="dropdown-item" href="#">Normal</a></li>
-        <li><a class="dropdown-item" href="#">Psychic</a></li>
-        <li><a class="dropdown-item" href="#">Poison</a></li>
-        <li><a class="dropdown-item" href="#">Steel</a></li>
-        <li><a class="dropdown-item" href="#">Bug</a></li>
-        <li><a class="dropdown-item" href="#">Rock</a></li>
-        <li><a class="dropdown-item" href="#">Dragon</a></li>
+        <li><a class="dropdown-item" href="#" onclick="fiterByType('fire')">Fire</a></li>
+        <li><a class="dropdown-item" href="#" onclick="fiterByType('water')">Water</a></li>
+        <li><a class="dropdown-item" href="#" onclick="fiterByType('dark')">Dark</a></li>
+        <li><a class="dropdown-item" href="#" onclick="fiterByType('electric')">Electric</a></li>
+        <li><a class="dropdown-item" href="#" onclick="fiterByType('fairy')">Fairy</a></li>
+        <li><a class="dropdown-item" href="#" onclick="fiterByType('fighting')">Fighting</a></li>
+        <li><a class="dropdown-item" href="#" onclick="fiterByType('flying')">Flying</a></li>
+        <li><a class="dropdown-item" href="#" onclick="fiterByType('ghost')">Ghost</a></li>
+        <li><a class="dropdown-item" href="#" onclick="fiterByType('grass')">Grass</a></li>
+        <li><a class="dropdown-item" href="#" onclick="fiterByType('ground')">Ground</a></li>
+        <li><a class="dropdown-item" href="#" onclick="fiterByType('ice')">Ice</a></li>
+        <li><a class="dropdown-item" href="#" onclick="fiterByType('normal')">Normal</a></li>
+        <li><a class="dropdown-item" href="#" onclick="fiterByType('psychic')">Psychic</a></li>
+        <li><a class="dropdown-item" href="#" onclick="fiterByType('poison')">Poison</a></li>
+        <li><a class="dropdown-item" href="#" onclick="fiterByType('steel')">Steel</a></li>
+        <li><a class="dropdown-item" href="#" onclick="fiterByType('bug')">Bug</a></li>
+        <li><a class="dropdown-item" href="#" onclick="fiterByType('rock')">Rock</a></li>
+        <li><a class="dropdown-item" href="#" onclick="fiterByType('dragon')">Dragon</a></li>
         <li><hr class="dropdown-divider"></li>
-        <li><a class="dropdown-item" href="#">Something else here</a></li>
+        <li><a class="dropdown-item" href="#" onclick="getAllPokemon()">Show All</a></li>
       </ul>
     </div>
   </div>
@@ -155,7 +154,7 @@
               <p id="display-stats-speed"></p>
             </div>
             <div class="catch-em d-flex justify-content-center  align-center">
-              <button type="button" class="btn btn-warning" onclick="getUserPokemonList(id)">
+              <button type="button" class="btn btn-warning" onclick="catchEm()">
                 Catch 'Em
                 <img id=""class="ms-2" src="./media/open-pokeball.png" alt="">
               </button>

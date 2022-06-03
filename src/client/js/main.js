@@ -30,8 +30,8 @@ const bluelightImg = {
 
 // main
 getAllPokemon();
-log(localStorage.getItem('userPokemonList'))
-localStorage.getItem('userPokemonList') ? userPokemonList = JSON.parse(localStorage.getItem('userPokemonList')) : void
+localStorage.getItem('userPokemonList') ? userPokemonList = JSON.parse(localStorage.getItem('userPokemonList')) : null
+renderInverntoryAmount()
 filterInput.addEventListener("keyup", filterPokedexByName);
 pokeballInventoryOpener.addEventListener("click", openInventorySideMenu);
 pokeballInventoryCloser.addEventListener("click", closeInventorySideMenu);
@@ -40,7 +40,6 @@ pokeballInventoryCloser.addEventListener("click", closeInventorySideMenu);
 // get value of input
 function filterPokedexByName() {
   let filterValue = document.getElementById("filterInput").value.toUpperCase();
-  log(filterValue);
 
   let li = document.querySelectorAll(".card");
 
@@ -58,6 +57,8 @@ function filterPokedexByName() {
 function catchEm() {
   userPokemonList.push(displayedPokemonsInfo)
   localStorage.setItem('userPokemonList', JSON.stringify(userPokemonList))
+  renderInverntoryAmount()
+  renderUserInventory()
 }
 function fiterByType(type) {
   fetch(`http://localhost:3000/api/pokedex/type/${type}`)
@@ -100,30 +101,38 @@ function getDetails(id) {
       ).value;
     });
 }
-function getUserPokemonList(id) {
+function renderUserInventory() {
   const userPokemonListUL = document.getElementById("userPokemonList");
   userPokemonListUL.innerHTML = ''
-  userPokemonList.forEach((userPokemon) => {
+  userPokemonList.forEach((userPokemon, i) => {
     const userPokemonLI = document.createElement("li");
-    userPokemonLI.classList.add("cardside", "userPokemonLI");
-    userPokemonLI.innerHTML = userPokemon.name;
+    userPokemonLI.classList.add( "userPokemonLI");
 
     const userPokemonLIImage = document.createElement("img");
     userPokemonLIImage.classList.add("pokemon-background");
     userPokemonLIImage.src = userPokemon.image;
 
-    // const bluelight = document.createElement('img');
-    // bluelight.classList.add('rotate-background')
-    // bluelight.src =
-
-    userPokemonLI.appendChild(userPokemonLIImage);
+    const userPokemonName = document.createElement("li");
+    userPokemonName.classList.add( "userPokemonName");
+    userPokemonName.innerHTML = userPokemon.name;
 
     const typesUL = document.createElement("li");
     typesUL.classList.add("userListTypeIcon");
-    typesUL.innerHTML = mapTypes(userPokemon.types);
-    userPokemonLI.appendChild(typesUL);
+    typesUL.innerHTML = mapTypes(userPokemon.types).join("");
+
+    const userPokemonNameTypesDiv = document.createElement('div')
+    userPokemonNameTypesDiv.classList.add("types-name");
+
+    const deleteButton = document.createElement('button')
+    deleteButton.addEventListener('click', function(){deletePokemon(i)})
+    deleteButton.innerHTML = 'X'
 
     userPokemonListUL.appendChild(userPokemonLI);
+    userPokemonLI.appendChild(userPokemonLIImage);
+    userPokemonNameTypesDiv.appendChild(userPokemonName);
+    userPokemonNameTypesDiv.appendChild(typesUL);
+    userPokemonLI.appendChild(userPokemonNameTypesDiv)
+    userPokemonLI.appendChild(deleteButton)
   });
 }
 // open cart on click pokemon to cart
@@ -131,7 +140,6 @@ function openInventorySideMenu() {
   document.querySelector(".cart-hide").classList.remove("cart-hide");
   document.getElementById("inventorybutton").classList.add("cart-hide");
   document.querySelector(".cart-container").classList.add("slide");
-  getUserPokemonList();
 };
 // close side bar on click
 function closeInventorySideMenu() {
@@ -178,4 +186,19 @@ function renderPokedex(pokedex) {
 }
 function log(string) {
   console.log(string)
+}
+
+function renderInverntoryAmount(){
+ const inventoryAmount = userPokemonList.length;
+ const classes = document.getElementsByClassName('inventoryAmount');
+ for (i = 0; i < classes.length; i++){
+  classes[i].innerHTML = inventoryAmount
+ }
+}
+
+function deletePokemon(index){
+  userPokemonList.splice(index, 1)
+  localStorage.setItem('userPokemonList', JSON.stringify(userPokemonList))
+  renderInverntoryAmount()
+  renderUserInventory()
 }

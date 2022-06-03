@@ -55,12 +55,28 @@ h1 {
     border-radius: 10%;
     box-shadow: 0 10px 20px rgba(0, 0, 0, 0.364), 5px 4px 8px rgba(255, 254, 254, 0.09);
 }
-.userPokeMonLI{
-    top: 30px;
-}
 /* .cardSide{
     margin-top: 30px;
     display: inline;
+} */
+.userPokemonName{
+    /* list-style: none;
+    color: black;
+    display: inline;
+    display: block;
+    margin-top: -5rem;
+    /* margin-left: 34%; */
+    font-size: 2rem; */
+}
+
+ .userPokemonLI img{
+    height: 7rem;
+}
+
+/* #userPokemonList{
+    background-color: #FFF0E9;
+    border-radius: 10%;
+    margin: 1rem;
 } */
 .cardSide img{
     height: 7rem;
@@ -163,12 +179,12 @@ img.typeIcon{
     z-index: 500;
     right: 0%;
     top: 0%;
-
-    background-image: url(/src/client/media/pokdex-side.png);
-    background-color: #fe0202e4;
+background-color: rgb(169, 178, 247);
+    /* background-image: url(/src/client/media/pokdex-side.png);
+    background-color: #df0000;
     background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23f8a88f'/%3E%3Cstop offset='1' stop-color='%23f8a88f' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ffdcce'/%3E%3Cstop offset='1' stop-color='%23ffdcce' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23f78f76'/%3E%3Cstop offset='1' stop-color='%23f78f76' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FFF0E9'/%3E%3Cstop offset='1' stop-color='%23FFF0E9' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23E75B40'/%3E%3Cstop offset='1' stop-color='%23E75B40' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FFC5B3'/%3E%3Cstop offset='1' stop-color='%23FFC5B3' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
     background-attachment: fixed;
-    background-size: cover;
+    background-size: cover; */
 
 }    
 
@@ -345,7 +361,6 @@ font-weight: bolder;
 #close-icon-inv{
     height: 3.5rem;
     float: right;
-    margin-top: %;
 }
 
 /* charizard gif */
@@ -381,7 +396,7 @@ font-weight: bolder;
 #pika{
     background-color: rgba(255, 255, 255, 0);
     height: 3rem;
-    position: absolute;
+    position: fixed;
     bottom: 1.4%;
     animation: run 3s linear .1s infinite;
 }
@@ -400,9 +415,9 @@ font-weight: bolder;
 
 /* inventory li */
 .userPokemonLI{
-    /* display: flex; */
+    display: flex;
     /* justify-content: space-between; */
-    display: inline-flex;
+    /* display: grid; */
     justify-content:space-evenly;
     list-style: none;
     align-items: center;
@@ -411,11 +426,22 @@ font-weight: bolder;
     /* position: relative; */
     top: 1em;
     font-size: 20px;
+    border:rgb(12, 23, 178) solid 3px;
+    border-radius: 2%;
+    margin: 1rem;
+    margin-bottom: 2rem;
+    padding: 1rem;
+    background-color: #5B70FF;
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%234d58ff'/%3E%3Cstop offset='1' stop-color='%234d58ff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23abb6ff'/%3E%3Cstop offset='1' stop-color='%23abb6ff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%239d9eff'/%3E%3Cstop offset='1' stop-color='%239d9eff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%235B70FF'/%3E%3Cstop offset='1' stop-color='%235B70FF' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%233E40FF'/%3E%3Cstop offset='1' stop-color='%233E40FF' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FBFBFF'/%3E%3Cstop offset='1' stop-color='%23FBFBFF' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
+    background-attachment: fixed;
+    background-size: cover;
+   
 }
 
 
 .userListTypeIcon{
-    display: flex;
+    /* margin-top: -2rem; */
+    margin-left: %;
 }
 
 #pokedextitle {

@@ -123,16 +123,18 @@ function renderUserInventory() {
     const userPokemonNameTypesDiv = document.createElement('div')
     userPokemonNameTypesDiv.classList.add("types-name");
 
-    const deleteButton = document.createElement('button')
+    const deleteButton = document.createElement('img')
     deleteButton.addEventListener('click', function(){deletePokemon(i)})
-    deleteButton.innerHTML = 'X'
+    deleteButton.classList.add('delete')
+    deleteButton.src = './media/delete-button.png'
 
+    userPokemonLI.appendChild(deleteButton)
     userPokemonListUL.appendChild(userPokemonLI);
     userPokemonLI.appendChild(userPokemonLIImage);
     userPokemonNameTypesDiv.appendChild(userPokemonName);
     userPokemonNameTypesDiv.appendChild(typesUL);
     userPokemonLI.appendChild(userPokemonNameTypesDiv)
-    userPokemonLI.appendChild(deleteButton)
+ 
   });
 }
 // open cart on click pokemon to cart

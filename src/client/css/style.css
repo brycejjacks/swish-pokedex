@@ -158,7 +158,7 @@ img.typeIcon{
 
 .rounded-pill{
     font-family: 'Kdam Thmor Pro', sans-serif;
-font-size: 15px;
+    font-size: 15px;
 }
 /* Feature 5 Css */
 
@@ -304,6 +304,7 @@ font-weight: bolder;
     background-color: yellow;
     width: fit-content;
     color: black;
+    font-family: 'Kdam Thmor Pro', sans-serif;
 }
 .detail-abilites{
     display: grid;

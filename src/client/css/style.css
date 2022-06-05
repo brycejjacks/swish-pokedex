@@ -4,7 +4,8 @@ body {
     background-attachment: fixed;
     background-size: cover;
     color: white;
-    font-family: rubik;
+    font-family: 'Press Start 2P', cursive;
+    font-size: 10px;
     
 }
 
@@ -60,13 +61,7 @@ h1 {
     display: inline;
 } */
 .userPokemonName{
-    /* list-style: none;
-    color: black;
-    display: inline;
-    display: block;
-    margin-top: -5rem;
-    /* margin-left: 34%; */
-    font-size: 2rem; */
+    font-size: 25px;
 }
 
  .userPokemonLI img{
@@ -105,7 +100,7 @@ img.typeIcon{
 .card-title {
     text-transform: capitalize;
     margin-bottom: 0px;
-    font-size: 32px;
+    font-size: 24px;
     font-weight: normal;
 }
 
@@ -143,6 +138,8 @@ img.typeIcon{
     padding: 16px 32px;
     text-align:start;
     box-shadow: 0 10px 20px rgba(0,0,0,.22), 5px 4px 8px rgba(0,0,0,.09);
+    font-family: 'Kdam Thmor Pro', sans-serif;
+
   }
 @keyframes bounce {
     /* 10% {
@@ -159,7 +156,10 @@ img.typeIcon{
     } */
 }
 
-
+.rounded-pill{
+    font-family: 'Kdam Thmor Pro', sans-serif;
+font-size: 15px;
+}
 /* Feature 5 Css */
 
 .pokimg{
@@ -182,12 +182,8 @@ img.typeIcon{
     z-index: 500;
     right: 0%;
     top: 0%;
-    background-color: rgb(169, 178, 247);
-    /* background-image: url(/src/client/media/pokdex-side.png);
-    background-color: #df0000;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23f8a88f'/%3E%3Cstop offset='1' stop-color='%23f8a88f' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23ffdcce'/%3E%3Cstop offset='1' stop-color='%23ffdcce' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23f78f76'/%3E%3Cstop offset='1' stop-color='%23f78f76' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FFF0E9'/%3E%3Cstop offset='1' stop-color='%23FFF0E9' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23E75B40'/%3E%3Cstop offset='1' stop-color='%23E75B40' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FFC5B3'/%3E%3Cstop offset='1' stop-color='%23FFC5B3' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
-    background-attachment: fixed;
-    background-size: cover; */
+    background: rgb(195,195,240);
+    background: linear-gradient(35deg, rgba(195,195,240,1) 4%, rgba(121,134,228,1) 61%, rgba(224,225,237,1) 90%);
 }    
 
   @media (max-width: 1358px) {
@@ -195,12 +191,12 @@ img.typeIcon{
       width:40%;
     }
   }
-  @media (max-width: 1158px) {
+  @media (max-width: 1148px) {
     .cart-container {
-      width:50%;
+      width:60%;
     }
   }
-  @media (max-width: 793px) {
+  @media (max-width: 894px) {
     .cart-container {
       width:90%;
     }
@@ -222,6 +218,10 @@ img.typeIcon{
 
 .modal{
     color: black;
+    font-size: 11px;
+}
+.modal h2{
+    font-size: 24px;
 }
 .modal-content{
     background-color: #FFF0E9;
@@ -239,11 +239,10 @@ img.typeIcon{
   
     
 }
-.details-title {
-    margin-left: 1rem; !important
-}
+
 #detailsType{
     margin-left: -1.5rem;
+    display: grid;
 }
 
 .footer1 img{
@@ -251,7 +250,7 @@ img.typeIcon{
     align-self: center;
    justify-content: center;
    align-items: center;
-    width: 25%; !important
+    width: 18%; !important
    padding: 0px; !important
     
 }
@@ -259,7 +258,7 @@ img.typeIcon{
     background-color: black;
 }
 #PokeModalName{
-font-size: 2.5rem;
+font-size: 30px;
 font-weight: bolder;
 }
 
@@ -278,7 +277,7 @@ font-weight: bolder;
     height: 20rem;  
     margin-top: -24rem;
     margin-top: -12rem;
-    margin-left: -1rem;
+    margin-left: -6rem;
 }
 .indexPoke{
     background-color: yellow;
@@ -287,7 +286,7 @@ font-weight: bolder;
 }
 .details-img{
     height: 15rem;
-    margin-left: 1.5rem;
+    margin-left: -3.5rem;
     margin-top: -50px;
     /* animation: bounce 3.1s ease-in  infinite ;
     transition: transform 900ms ease-in-out 505ms;
@@ -298,8 +297,8 @@ font-weight: bolder;
 
 .smallbox{
     position: relative;
-    left: 70%;
-    top: 80%;
+    left: 55%;
+    top: 75%;
     font-weight: bolder;
     font-size: 1.5em;
     background-color: yellow;
@@ -315,9 +314,8 @@ font-weight: bolder;
    margin-left: -10px;
     
 }
-#pokeDescription{
-    background-color: rgba(0, 0, 0, 0.216);
-    /* height: 6rem; */
+#pokeDescription, p,li{
+    line-height: 2;
 }
 .bottomModal{
     margin-top: -2rem;
@@ -453,11 +451,8 @@ font-weight: bolder;
     margin: 1rem;
     margin-bottom: 2rem;
     padding: 1rem;
-    background-color: #5B70FF;
-    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='100%25' height='100%25' viewBox='0 0 1200 800'%3E%3Cdefs%3E%3CradialGradient id='a' cx='0' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%234d58ff'/%3E%3Cstop offset='1' stop-color='%234d58ff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='b' cx='1200' cy='800' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23abb6ff'/%3E%3Cstop offset='1' stop-color='%23abb6ff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='c' cx='600' cy='0' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%239d9eff'/%3E%3Cstop offset='1' stop-color='%239d9eff' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='d' cx='600' cy='800' r='600' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%235B70FF'/%3E%3Cstop offset='1' stop-color='%235B70FF' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='e' cx='0' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%233E40FF'/%3E%3Cstop offset='1' stop-color='%233E40FF' stop-opacity='0'/%3E%3C/radialGradient%3E%3CradialGradient id='f' cx='1200' cy='0' r='800' gradientUnits='userSpaceOnUse'%3E%3Cstop offset='0' stop-color='%23FBFBFF'/%3E%3Cstop offset='1' stop-color='%23FBFBFF' stop-opacity='0'/%3E%3C/radialGradient%3E%3C/defs%3E%3Crect fill='url(%23a)' width='1200' height='800'/%3E%3Crect fill='url(%23b)' width='1200' height='800'/%3E%3Crect fill='url(%23c)' width='1200' height='800'/%3E%3Crect fill='url(%23d)' width='1200' height='800'/%3E%3Crect fill='url(%23e)' width='1200' height='800'/%3E%3Crect fill='url(%23f)' width='1200' height='800'/%3E%3C/svg%3E");
-    background-attachment: fixed;
-    background-size: cover;
-   
+    background: rgb(113,113,237);
+background: linear-gradient(35deg, rgba(113,113,237,1) 19%, rgba(121,134,228,1) 61%, rgba(224,225,237,1) 90%);
 }
 
 

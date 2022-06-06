@@ -12,13 +12,19 @@
   <link rel="stylesheet" href="./css/style.css">
   <!-- JavaScript -->
   <script src="./js/main.js" defer></script>
+  <!-- google Fonts -->
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Acme&family=Kdam+Thmor+Pro&family=Press+Start+2P&display=swap" rel="stylesheet">
+
 </head>
 
 <body>
 
   <div class="pokimg sticky-top" id="pokeimg">
-
-    <img id="inventorybutton" src="./media/pokeball-png-45346 3.png" alt="">
+    <span class="position-absolute mt-3 translate-middle badge rounded-pill bg-danger inventoryAmount">0</span>
+    <img class="mt-3 me-3" id="inventorybutton" src="./media/pokeball-4.png" alt="">
+ 
   </div>
 
 <img id="charizardgif" src="./media/charizard-gif.gif" alt="">
@@ -26,7 +32,7 @@
 
   <div class="input d-flex justify-content-center">
     <div class="input-group  d-flex justify-content-center" >
-      <input type="text" id="filterInput" class="form-control w-25 w-sm-25" aria-label="Text input with segmented dropdown button">
+      <input type="text" id="filterInput" class="form-control w-25 w-sm-25" placeholder="Search by name" aria-label="Text input with segmented dropdown button">
       <button type="button" class="btn btn-warning  dropdown-toggle-split" data-bs-toggle="dropdown" aria-expanded="false">
         <img src="./media/filter.png" class="img-fluid filter">
       </button>
@@ -62,14 +68,14 @@
     <div class="cart-body">
       <div class="xbutton sticky-top me-3 mt-2" id="xbutton">
         <img id="close-icon-inv" src="./media/open-pokeball.png" alt="">
+        <span class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-danger inventoryAmount">0</span>
       </div>
       <div id="renderedInventory">
         <h1 id="pokedextitle">Pokedex</h1>
         <ul id="userPokemonList">
-          
         </ul>
       </div>
-      <img id="pika" src="./media/pika8bit-svg.gif" alt="">
+      <img  id="pika" src="./media/pika8bit-svg.gif" alt="">
     </div>
   </div>
 
@@ -133,7 +139,7 @@
           </div>
           <!-- Description of pokemon -->
           <div class="bottomModal">
-            <h3>Description</h3>                   
+            <h2>Description</h2>                   
             <p id="detailsDescription">Lorem, ipsum dolor sit amet consectetur adipisicing elit. Iure, dicta?</p>
           </div>
           
